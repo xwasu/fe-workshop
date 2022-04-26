@@ -2,18 +2,22 @@
   "name": "fe-workshop",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack",
+    "test": "mocha-webpack --webpack-config webpack.test.js \"src/**/*.spec.js\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/xwasu/fe-workshop.git"
-  },
-  "author": "",
+  "author": "mat3e",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/xwasu/fe-workshop/issues"
-  },
-  "homepage": "https://github.com/xwasu/fe-workshop#readme"
+  "devDependencies": {
+    "clean-webpack-plugin": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mocha": "^5.2.0",
+    "mocha-webpack": "^2.0.0-beta.0",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.2.0",
+    "webpack-dev-server": "^3.1.10",
+    "webpack-node-externals": "^1.7.2"
+  }
 }
