@@ -3,6 +3,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'production',
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx']
+  },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
@@ -10,6 +13,12 @@ module.exports = {
     })
   ],
   module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        loader: 'awesome-typescript-loader'
+      }
+    ]
   },
   optimization: {
     runtimeChunk: 'single',
